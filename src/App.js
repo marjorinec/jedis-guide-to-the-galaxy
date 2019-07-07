@@ -1,30 +1,40 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class Home extends React.Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <section className="planet-info">
+        <div className="planet-name">
+          Horácio
+        </div>
+        <div className="planet-rotation_period">
+          10h
+        </div>
+        <div className="planet-orbital_period">
+          20h
+        </div>
+        <div className="planet-diameter">
+          19m
+        </div>
+        <div className="planet-climate">
+          Temperado
+        </div>
+        <div className="planet-gravity">
+          1 gravidade
+        </div>
+        <div className="planet-terrain">
+          Planícies
+        </div>
+        <div className="planet-surface_water">
+          50%
+        </div>
+        <div className="planet-population">
+          Muita gente
+        </div>
+      </section>
     );
   }
 }
-
-
 
 export default Home;
