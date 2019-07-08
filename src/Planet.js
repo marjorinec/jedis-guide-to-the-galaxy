@@ -1,35 +1,57 @@
 import React from 'react';
+import axios from 'axios';
 
 class Planet extends React.Component {
+	constructor(props) {
+		super(props)
+		this.state = {}
+	}
+
+	async componentWillMount() {
+		const planet = await axios.get("https://swapi.co/api/planets/42")
+		const planetInfo = {
+			name: planet.data.name,
+			rotation_period: planet.data.rotation_period,
+			orbital_period: planet.data.orbital_period,
+			diameter: planet.data.diameter,
+			climate: planet.data.climate,
+			gravity: planet.data.gravity,
+			terrain: planet.data.terrain,
+			surface_water: planet.data.surface_water,
+			population: planet.data.population
+		}
+		this.setState(planetInfo)
+	}
+
 	render() {
 		return (
 			<section className="planet-info">
 			<div className="planet-name">
-				Horácio
+				{this.state.name}
 			</div>
 			<div className="planet-rotation_period">
-				10h
+				{this.state.rotation_period}
 			</div>
 			<div className="planet-orbital_period">
-				20h
+				{this.state.orbital_period}
 			</div>
 			<div className="planet-diameter">
-				19m
+				{this.state.diameter}
 			</div>
 			<div className="planet-climate">
-				Temperado
+				{this.state.climate}
 			</div>
 			<div className="planet-gravity">
-				1 gravidade
+				{this.state.gravity}
 			</div>
 			<div className="planet-terrain">
-				Planícies
+				{this.state.terrain}
 			</div>
 			<div className="planet-surface_water">
-				50%
+				{this.state.surface_water}
 			</div>
 			<div className="planet-population">
-				Muita gente
+				{this.state.population}
 			</div>
 		</section>
 		)
