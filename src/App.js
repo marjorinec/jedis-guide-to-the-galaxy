@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-class Home extends React.Component {
+class App extends React.Component {
   render() {
     return (
       <section className="planet-info">
@@ -37,4 +37,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+export default App;
