@@ -3,7 +3,7 @@ import Planet from './Planet';
 
 class App extends React.Component {
   render() {
-    return <Planet/>
+    return <Planet id="12"/>
   }
 }
 

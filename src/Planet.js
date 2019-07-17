@@ -8,9 +8,7 @@ class Planet extends React.Component {
 	}
 
 	async componentWillMount() {
-		const planetsData = await axios.get("https://swapi.co/api/planets/")
-		const totalPlanets = planetsData.data.count
-		const planet = await axios.get(this.randomPlanets(totalPlanets))
+		const planet = await axios.get("https://swapi.co/api/planets/" + this.props.id)
 		
 		const planetInfo = {
 			name: planet.data.name,
@@ -25,14 +23,6 @@ class Planet extends React.Component {
 		}
 		this.setState(planetInfo)
 	}
-
-	randomPlanets(totalPlanets){
-		let url = "https://swapi.co/api/planets/"
-		let planetId = Math.ceil(Math.random() * totalPlanets)
-				
-		url = url + planetId.toString()
-		return url
-	}	
 
 	render() {
 		return (
@@ -65,7 +55,7 @@ class Planet extends React.Component {
 				{this.state.population}
 			</div>
 			<div className="random-planet-id">
-				{this.state.randomPlanetId}
+				{this.props.id}
 			</div>
 		</section>
 		)
