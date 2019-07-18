@@ -67,9 +67,6 @@ class Planet extends React.Component {
 					<div className="planet-population">
 						{this.state.planetInfo.population}
 					</div>
-					<div className="random-planet-id">
-						{this.props.id}
-					</div>
 				</section>
 			)
 		}

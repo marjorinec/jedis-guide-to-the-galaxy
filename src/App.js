@@ -24,7 +24,12 @@ class App extends React.Component {
 	}	
 
   render() {
-    return <Planet id={this.state.planetId}/>
+    return (
+      <section>
+        <Planet id={this.state.planetId}/>
+        <button onClick={this.randomPlanets.bind(this)}>Oi</button>
+      </section>
+    )
   }
 }
 
