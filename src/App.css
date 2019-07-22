@@ -1,3 +1,19 @@
+@font-face {
+  font-family: Starjedi;
+  src: url(./assets/Starjedi.ttf);
+}
+
+header {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
 body {
   background: url(assets/sw-background.jpg) #000;
+}
+
+h1 {
+  color: white;
+  font-family: Starjedi;
+  text-align: center;
 }

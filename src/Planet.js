@@ -1,5 +1,7 @@
 import React from 'react';
 import axios from 'axios';
+import { Card } from 'react-bootstrap'
+import './Planet.css'
 
 class Planet extends React.Component {
 	constructor(props) {
@@ -39,7 +41,7 @@ class Planet extends React.Component {
 		)
 		} else {
 			return (
-				<section className="planet-info">
+				<Card className="planet-info">
 					<div className="planet-name">
 						{this.state.planetInfo.name}
 					</div>
@@ -67,7 +69,7 @@ class Planet extends React.Component {
 					<div className="planet-population">
 						{this.state.planetInfo.population}
 					</div>
-				</section>
+				</Card>
 			)
 		}
 	}  
