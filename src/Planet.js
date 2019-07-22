@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { Card } from 'react-bootstrap'
+import { Card, Row, Col, Table } from 'react-bootstrap'
 import './Planet.css'
 
 class Planet extends React.Component {
@@ -41,35 +41,102 @@ class Planet extends React.Component {
 		)
 		} else {
 			return (
-				<Card className="planet-info">
-					<div className="planet-name">
-						{this.state.planetInfo.name}
-					</div>
+				<Row>
+					<Col md={{ span: 6, offset: 3 }}>
+					<Card className="planet-info">
+					<Card.Header>
+						<div className="planet-name">
+							{this.state.planetInfo.name}
+						</div>
+					</Card.Header>
+					<Table>
+						<tbody>
+							<tr>
+								<td>
+									Período de rotação
+								</td>
+								<td>
+									{this.state.planetInfo.rotation_period}
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Período de órbita
+								</td>
+								<td>
+									{this.state.planetInfo.orbital_period}
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Diâmetro
+								</td>
+								<td>
+									{this.state.planetInfo.diameter}
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Clima
+								</td>
+								<td>
+									{this.state.planetInfo.climate}
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Gravidade
+								</td>
+								<td>
+								{this.state.planetInfo.gravity}
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Terreno
+								</td>
+								<td>
+									{this.state.planetInfo.terrain}
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Água na superfície?
+								</td>
+								<td>
+									{this.state.planetInfo.surface_water}
+								</td>
+							</tr>
+							<tr>
+								<td>
+									População
+								</td>
+								<td>
+									{this.state.planetInfo.population}
+								</td>
+							</tr>
+						</tbody>
+					</Table>
 					<div className="planet-rotation_period">
-						{this.state.planetInfo.rotation_period}
 					</div>
 					<div className="planet-orbital_period">
-						{this.state.planetInfo.orbital_period}
 					</div>
 					<div className="planet-diameter">
-						{this.state.planetInfo.diameter}
 					</div>
 					<div className="planet-climate">
-						{this.state.planetInfo.climate}
 					</div>
 					<div className="planet-gravity">
-						{this.state.planetInfo.gravity}
 					</div>
 					<div className="planet-terrain">
-						{this.state.planetInfo.terrain}
 					</div>
 					<div className="planet-surface_water">
-						{this.state.planetInfo.surface_water}
 					</div>
 					<div className="planet-population">
-						{this.state.planetInfo.population}
 					</div>
 				</Card>
+					</Col>
+				</Row>
+
 			)
 		}
 	}  
