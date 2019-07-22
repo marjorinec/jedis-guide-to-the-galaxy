@@ -37,7 +37,7 @@ class App extends React.Component {
         </header>
         <Row>
           <Col className="button-bar">
-            <Button className="button" variant="dark" onClick={this.randomPlanets.bind(this)}>Discover a new planet!</Button>
+            <Button className="button btn-lg" variant="dark" onClick={this.randomPlanets.bind(this)}>Discover a new planet!</Button>
           </Col>
         </Row>
       <Container className="app">

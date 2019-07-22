@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { Card, Row, Col, Table } from 'react-bootstrap'
+import { Card, Row, Col, Table, Spinner, Container } from 'react-bootstrap'
 import './Planet.css'
 
 class Planet extends React.Component {
@@ -35,9 +35,12 @@ class Planet extends React.Component {
 		console.log(this.state)
 		if (this.state.planetInfo === null) {
 			return (
-			<div>
-				carregando rs
-			</div>
+				<Container className="loading">
+					<Spinner animation="border" variant="light" role="status">
+						<span className="sr-only">Loading...</span>
+					</Spinner>
+				</Container>
+
 		)
 		} else {
 			return (

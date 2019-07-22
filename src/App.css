@@ -12,17 +12,20 @@ body {
   background: url(assets/sw-background.jpg) #000;
 }
 
-h1 {
+header h1 {
   color: white;
   font-family: Starjedi;
   text-align: center;
+  font-size: 3.5rem;
 }
 
 .button-bar {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 80px;
 }
 
 .button.btn-dark {
-  background-color:#181818
+  background-color:#181818;
+  font-size: 1rem;
+  border: 1px solid white;
 }
