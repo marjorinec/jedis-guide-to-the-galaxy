@@ -12,9 +12,28 @@ class Planet extends React.Component {
 		}
 	}
 
-	async componentDidUpdate(prevProps, prevState) {
+	async fetchResidents(residents) {
+		if (residents.length === 0) {
+			return "0"
+		}
 		
-		if (this.props.id !== undefined  && this.props.id !== this.state.currentPlanetId){
+		let fullResidentsList = []
+
+		for (let i=0; i<residents.length; i++) {
+			fullResidentsList[i] = await axios.get(residents[i])
+		}
+
+		for (let i=0; i<fullResidentsList.length; i++) {
+			fullResidentsList[i] = fullResidentsList[i].data.name
+		}
+
+		let residentsList = fullResidentsList.join(', ')
+
+		return residentsList
+	}
+
+	async componentDidUpdate(prevProps, prevState) {
+		if (this.props.id !== undefined && this.props.id !== this.state.currentPlanetId){
 			const planet = await axios.get("https://swapi.co/api/planets/" + this.props.id)
 			const planetInfo = {
 				name: planet.data.name,
@@ -25,10 +44,14 @@ class Planet extends React.Component {
 				gravity: planet.data.gravity,
 				terrain: planet.data.terrain,
 				surface_water: planet.data.surface_water,
-				population: planet.data.population
+				population: planet.data.population,
+				residents: await this.fetchResidents(planet.data.residents),
+				films: planet.data.films
 			}
 			this.setState({ planetInfo: planetInfo, currentPlanetId: this.props.id })
+
 		}
+
 	}
 
 	render() {
@@ -115,6 +138,22 @@ class Planet extends React.Component {
 								</td>
 								<td>
 									{this.state.planetInfo.population}
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Residents
+								</td>
+								<td>
+									{this.state.planetInfo.residents}
+								</td>
+							</tr>
+							<tr>
+								<td>
+									Films
+								</td>
+								<td>
+									{this.state.planetInfo.films.length}
 								</td>
 							</tr>
 						</tbody>
