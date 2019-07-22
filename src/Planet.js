@@ -32,7 +32,6 @@ class Planet extends React.Component {
 	}
 
 	render() {
-		console.log(this.state)
 		if (this.state.planetInfo === null) {
 			return (
 				<Container className="loading">
