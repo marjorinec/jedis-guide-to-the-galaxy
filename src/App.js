@@ -1,6 +1,7 @@
 import React from 'react';
 import Planet from './Planet';
 import axios from 'axios';
+import './App.css'
 
 class App extends React.Component {
   constructor(props) {
@@ -25,7 +26,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <section>
+      <section className="app">
         <Planet id={this.state.planetId}/>
         <button onClick={this.randomPlanets.bind(this)}>Oi</button>
       </section>
