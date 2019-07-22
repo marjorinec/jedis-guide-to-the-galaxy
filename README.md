@@ -10,3 +10,10 @@ Ela foi feita como um desafio técnico para um processo seletivo da B2W Digital.
 yarn install
 yarn run
 ```
+
+## Próximas atualizações
+1. Novos dados de planetas
+ * Número de filmes em que eles aparecem
+ * Residentes famosos
+2. Ajuste da coluna de informações
+3. Animação de loading enquanto carrega um novo planeta
