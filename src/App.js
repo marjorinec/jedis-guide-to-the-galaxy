@@ -2,7 +2,7 @@ import React from 'react';
 import Planet from './Planet';
 import axios from 'axios';
 import './App.css'
-import { Row, Col, Container } from 'react-bootstrap'
+import { Row, Col, Container, Button} from 'react-bootstrap'
 
 class App extends React.Component {
   constructor(props) {
@@ -35,10 +35,13 @@ class App extends React.Component {
             </Container>
           </Row>
         </header>
-        
+        <Row>
+          <Col className="button-bar">
+            <Button className="button" variant="dark" onClick={this.randomPlanets.bind(this)}>Descubra um novo planeta!</Button>
+          </Col>
+        </Row>
       <Container className="app">
         <Planet id={this.state.planetId}/>
-        <button onClick={this.randomPlanets.bind(this)}>Oi</button>
       </Container>
       </section>
     )

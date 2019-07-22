@@ -17,3 +17,12 @@ h1 {
   font-family: Starjedi;
   text-align: center;
 }
+
+.button-bar {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.button.btn-dark {
+  background-color:#181818
+}
