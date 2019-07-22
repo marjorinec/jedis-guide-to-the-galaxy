@@ -53,7 +53,7 @@ class Planet extends React.Component {
 						<tbody>
 							<tr>
 								<td>
-									Período de rotação
+									Rotation period
 								</td>
 								<td>
 									{this.state.planetInfo.rotation_period}
@@ -61,7 +61,7 @@ class Planet extends React.Component {
 							</tr>
 							<tr>
 								<td>
-									Período de órbita
+									Orbital period
 								</td>
 								<td>
 									{this.state.planetInfo.orbital_period}
@@ -69,7 +69,7 @@ class Planet extends React.Component {
 							</tr>
 							<tr>
 								<td>
-									Diâmetro
+									Diameter
 								</td>
 								<td>
 									{this.state.planetInfo.diameter}
@@ -77,7 +77,7 @@ class Planet extends React.Component {
 							</tr>
 							<tr>
 								<td>
-									Clima
+									Climate
 								</td>
 								<td>
 									{this.state.planetInfo.climate}
@@ -85,7 +85,7 @@ class Planet extends React.Component {
 							</tr>
 							<tr>
 								<td>
-									Gravidade
+									Gravity
 								</td>
 								<td>
 								{this.state.planetInfo.gravity}
@@ -93,7 +93,7 @@ class Planet extends React.Component {
 							</tr>
 							<tr>
 								<td>
-									Terreno
+									Terrain
 								</td>
 								<td>
 									{this.state.planetInfo.terrain}
@@ -101,7 +101,7 @@ class Planet extends React.Component {
 							</tr>
 							<tr>
 								<td>
-									Água na superfície?
+									Surface water
 								</td>
 								<td>
 									{this.state.planetInfo.surface_water}
@@ -109,7 +109,7 @@ class Planet extends React.Component {
 							</tr>
 							<tr>
 								<td>
-									População
+									Population
 								</td>
 								<td>
 									{this.state.planetInfo.population}
