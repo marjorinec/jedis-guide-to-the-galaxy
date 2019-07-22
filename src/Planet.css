@@ -1,0 +1,19 @@
+.card.planet-info {
+  background: #181818;
+  border: 0.5px ridge white;
+  color: white;
+}
+
+tbody {
+  color: white;
+}
+
+.table tr td:first-of-type {
+  font-weight: bold;
+}
+
+.planet-name {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+}
