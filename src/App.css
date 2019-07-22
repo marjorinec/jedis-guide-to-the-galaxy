@@ -10,6 +10,7 @@ header {
 
 body {
   background: url(assets/sw-background.jpg) #000;
+  padding-bottom: 120px;
 }
 
 header h1 {
