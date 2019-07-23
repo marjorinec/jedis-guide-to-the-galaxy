@@ -12,8 +12,6 @@ yarn run
 ```
 
 ## Próximas atualizações
-1. Novos dados de planetas
- * Número de filmes em que eles aparecem
- * Residentes famosos
-2. Ajuste da coluna de informações
-3. Animação de loading enquanto carrega um novo planeta
+1. Busca de planetas por nome
+2. Exibir múltiplos planetas
+3. Mais filtros de pesquisa

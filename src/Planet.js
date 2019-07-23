@@ -54,7 +54,7 @@ class Planet extends React.Component {
 
 	async componentDidUpdate(prevProps, prevState) {
 		if (this.props.id !== undefined && this.props.id !== this.state.currentPlanetId){
-			if (this.state.ready == false) {
+			if (this.state.ready === false) {
 				this.fetchPlanet()
 			} else {
 				this.setState({ ready: false })
