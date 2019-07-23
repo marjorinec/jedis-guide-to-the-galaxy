@@ -8,7 +8,8 @@ class Planet extends React.Component {
 		super(props)
 		this.state = {
 			planetInfo: null,
-			currentPlanetId: null
+			currentPlanetId: null,
+			ready: false
 		}
 	}
 
@@ -32,37 +33,44 @@ class Planet extends React.Component {
 		return residentsList
 	}
 
+	async fetchPlanet(){
+		const planet = await axios.get("https://swapi.co/api/planets/" + this.props.id)
+		const planetInfo = {
+			name: planet.data.name,
+			rotation_period: planet.data.rotation_period,
+			orbital_period: planet.data.orbital_period,
+			diameter: planet.data.diameter,
+			climate: planet.data.climate,
+			gravity: planet.data.gravity,
+			terrain: planet.data.terrain,
+			surface_water: planet.data.surface_water,
+			population: planet.data.population,
+			residents: await this.fetchResidents(planet.data.residents),
+			films: planet.data.films
+		}
+
+		this.setState({ planetInfo: planetInfo, currentPlanetId: this.props.id, ready: true})
+	}
+
 	async componentDidUpdate(prevProps, prevState) {
 		if (this.props.id !== undefined && this.props.id !== this.state.currentPlanetId){
-			const planet = await axios.get("https://swapi.co/api/planets/" + this.props.id)
-			const planetInfo = {
-				name: planet.data.name,
-				rotation_period: planet.data.rotation_period,
-				orbital_period: planet.data.orbital_period,
-				diameter: planet.data.diameter,
-				climate: planet.data.climate,
-				gravity: planet.data.gravity,
-				terrain: planet.data.terrain,
-				surface_water: planet.data.surface_water,
-				population: planet.data.population,
-				residents: await this.fetchResidents(planet.data.residents),
-				films: planet.data.films
+			if (this.state.ready == false) {
+				this.fetchPlanet()
+			} else {
+				this.setState({ ready: false })
 			}
-			this.setState({ planetInfo: planetInfo, currentPlanetId: this.props.id })
-
 		}
 
 	}
 
 	render() {
-		if (this.state.planetInfo === null) {
+		if (!this.state.ready) {
 			return (
 				<Container className="loading">
 					<Spinner animation="border" variant="light" role="status">
 						<span className="sr-only">Loading...</span>
 					</Spinner>
 				</Container>
-
 		)
 		} else {
 			return (
